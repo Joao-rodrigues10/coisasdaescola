@@ -43,3 +43,42 @@ pessoas.pop(4)#exclui o registro com o indice passado
 
 pessoas.remove('romeu')
 print(pessoas)
+
+#pessoas.clear() # tira todo mundo da lista mas mantem a lista existindo
+
+print(pessoas.index('joao'))#retorna em qual indice o registro esta (sendo o primeiro registro encontrado)
+
+print(pessoas.count("maria"))
+print(pessoas.count("joao"))
+
+numeros = [33,25,60,10,20]
+
+numeros.sort()
+
+print(numeros)
+
+numeros.reverse()
+
+print(numeros)
+
+
+maior_numero = max(numeros)
+
+menor_numero = min(numeros)
+
+print(maior_numero)
+
+print(menor_numero)
+
+
+turma = [
+    ["joao", 20, 'desenvolvedor web'],
+    ['maria', 19, 'desenvolvedora python'],
+    ['romeu', 32, 'desenvolvedor PHP'],
+    ['julieta', 31, 'desenvolvedora Flutter']
+    ]
+
+print(turma[3][1])
+
+print(f'idade {turma[3] [1]} de {turma [3][0]}')
+
