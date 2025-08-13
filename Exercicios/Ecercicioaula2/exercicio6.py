@@ -1,64 +1,10 @@
-# Exercício 1: Contagem de 1 a 10
-# Imprima os números de 1 a 10.
- 
-#########################################################################
- 
-# Exercício 2: Soma dos Números
-# Calcule a soma dos números de 1 a 100.
- 
-#########################################################################
- 
-# Exercício 3: Tabuada do 5
-# Imprima a tabuada do 5.
- 
-#########################################################################
- 
-# Exercício 4: Números Pares
-# Imprima todos os números pares de 1 a 20.
- 
-#########################################################################
- 
-# Exercício 5: Quadrados dos Números
-# Imprima os quadrados dos números de 1 a 10.
- 
-#########################################################################
- 
-# Exercício 6: Contagem Regressiva
-# Imprima uma contagem regressiva de 10 a 1.
- 
-#########################################################################
- 
-# Exercício 7: Fatorial de um Número
-# Calcule e imprima o fatorial do número 5.
- 
- 
-#########################################################################
- 
-# Exercício 8: Números Ímpares
-# Imprima todos os números ímpares de 1 a 20.
- 
- 
-#########################################################################
- 
-# Exercício 9: Contar Vogais
-# Conte e imprima o número de vogais em uma string.
-# string = "Hello, World!"
-# vogais = "aeiouAEIOU"
- 
-#########################################################################
- 
-# Exercício 10: Gerenciador de Lista de Compras
-# Peça ao usuário para adicionar itens à sua lista de compras até que ele digite "sair".
-# Inicializa a lista de compras vazia
-# Loop para adicionar itens
-# Exibe a lista de compras com o loop FOR
-
 def exercicio1():
     i = 1
     while i <= 10:
         print(i)
         i += 1
-    print("####################################################")
+    print("#" * 50)
+
 
 def exercicio2():
     soma = 0
@@ -67,54 +13,59 @@ def exercicio2():
         soma += i
         i += 1
     print("Soma:", soma)
-    print("####################################################")
+    print("#" * 50)
+
 
 def exercicio3():
     i = 1
     while i <= 10:
-        print(f"5 x {i} = {5*i}")
+        print(f"5 x {i} = {5 * i}")
         i += 1
-     print("####################################################")
+    print("#" * 50)
+
 
 def exercicio4():
     i = 2
     while i <= 20:
         print(i)
         i += 2
-     print("####################################################")
+    print("#" * 50)
+
 
 def exercicio5():
     i = 1
     while i <= 10:
-        print(f"{i} ao quadrado é {i**2}")
+        print(f"{i} ao quadrado é {i ** 2}")
         i += 1
-    print("####################################################")
+    print("#" * 50)
+
 
 def exercicio6():
     i = 10
-    while i >= 0:
+    while i >= 1:
         print(i)
         i -= 1
-    print("####################################################")
+    print("#" * 50)
 
 
 def exercicio7():
     i = 5
-    resultado =1 
-    while i <= 5:
-        resultado*= i
-        i+= 1 
-    print(resultado)
-    print("####################################################")
+    resultado = 1
+    while i > 0:
+        resultado *= i
+        i -= 1
+    print(f"Fatorial de 5 é {resultado}")
+    print("#" * 50)
 
 
 def exercicio8():
-   i = 1
+    i = 1
     while i <= 20:
         if i % 2 != 0:
             print(i)
         i += 1
-    print("####################################################")
+    print("#" * 50)
+
 
 def exercicio9():
     string = "Hello, World!"
@@ -126,4 +77,51 @@ def exercicio9():
             count += 1
         i += 1
     print(f"Número de vogais na string '{string}': {count}")
+    print("#" * 50)
 
+
+def exercicio10():
+    lista_compras = []
+    while True:
+        item = input("Digite um item para adicionar à lista (ou 'sair' para terminar): ")
+        if item.lower() == "sair":
+            break
+        lista_compras.append(item)
+    print("Sua lista de compras é:")
+    for produto in lista_compras:
+        print("-", produto)
+    print("#" * 50)
+
+
+# Loop principal para permitir escolher múltiplos exercícios
+while True:
+    seletor = input("Insira o número do exercício (1 a 10) ou 'sair' para encerrar: ")
+    if seletor.lower() == "sair":
+        break
+
+    if seletor.isdigit():
+        seletor = int(seletor)
+        if seletor == 1:
+            exercicio1()
+        elif seletor == 2:
+            exercicio2()
+        elif seletor == 3:
+            exercicio3()
+        elif seletor == 4:
+            exercicio4()
+        elif seletor == 5:
+            exercicio5()
+        elif seletor == 6:
+            exercicio6()
+        elif seletor == 7:
+            exercicio7()
+        elif seletor == 8:
+            exercicio8()
+        elif seletor == 9:
+            exercicio9()
+        elif seletor == 10:
+            exercicio10()
+        else:
+            print("Número inválido, digite entre 1 e 10.")
+    else:
+        print("Entrada inválida. Digite um número ou 'sair'.")
